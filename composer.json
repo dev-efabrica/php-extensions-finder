@@ -1,0 +1,16 @@
+{
+    "name": "efabrica/php-extensions-finder",
+    "description": "Finds PHP extension required by code, can be used in CI",
+    "type": "library",
+    "keywords": ["PHP", "extensions finder", "ci", "test"],
+    "require": {
+        "php": ">= 7.1.0",
+        "nikic/php-parser": "^4.1",
+        "symfony/console": "^4.2",
+        "symfony/finder": "^4.2"
+    },
+    "autoload": {
+        "classmap": ["src/"]
+    },
+    "bin": ["bin/php-extensions-finder"]
+}
