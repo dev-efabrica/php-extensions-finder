@@ -23,6 +23,6 @@ Please, add these lines to your composer.json:
 Return code is count of missing extensions, so you can use it in CI tools.
 
 ## Installation
-PHP extension finder requires PHP 7.1.0 or newer. You can install it via Composer. This project is not meant to be run as a dependency, so install it as standalone:
+PHP extension finder requires PHP 7.1.0 or newer. You can install it via Composer. This project is not meant to be run as a dependency, so install it globally:
 
 `composer global require efabrica/php-extensions-finder`
