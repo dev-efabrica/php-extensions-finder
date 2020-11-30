@@ -5,6 +5,7 @@
     "keywords": ["PHP", "extensions finder", "ci", "test"],
     "require": {
         "php": ">= 7.1.0",
+        "ext-json": "*",
         "nikic/php-parser": "^4.1",
         "symfony/console": "^4.2 | ^5.0",
         "symfony/finder": "^4.2 | ^5.0"

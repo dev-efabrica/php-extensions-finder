@@ -46,7 +46,7 @@ class ExtensionsFinderCommand extends Command
         if (!$missingExtensions) {
             $output->writeln('No missing PHP extensions');
             $output->writeln('');
-            return;
+            return 0;
         }
         $output->writeln('Missing extensions usage:', OutputInterface::VERBOSITY_VERY_VERBOSE);
         $output->writeln("=========================\n", OutputInterface::VERBOSITY_VERY_VERBOSE);
