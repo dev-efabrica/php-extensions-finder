@@ -49,6 +49,7 @@ class ExtensionsFinderVisitor extends NodeVisitorAbstract
                 }
             }
         }
+        return null;
     }
     private function addExtension(string $extName, string $token, int $line): void
     {
@@ -64,11 +65,11 @@ class ExtensionsFinderVisitor extends NodeVisitorAbstract
             'line' => $line,
         ];
     }
-    
+
     public function getExtensions(): array
     {
         ksort($this->extensions);
         return $this->extensions;
     }
-    
+
 }

@@ -12,7 +12,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 class ExtensionsFinderCommand extends Command
 {
-    protected function configure()
+    protected function configure(): void
     {
         parent::configure();
         $this->setName('check')
@@ -22,7 +22,7 @@ class ExtensionsFinderCommand extends Command
         ;
     }
 
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $output->writeln('');
 
