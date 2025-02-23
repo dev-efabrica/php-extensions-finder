@@ -19,6 +19,7 @@ class ExtensionsFinderCommand extends Command
             ->setDescription('Checks if your composer.json contains all PHP extensions used in your code')
             ->addArgument('dirs', InputArgument::IS_ARRAY | InputArgument::REQUIRED, 'List of dirs to check')
             ->addOption('composer', null, InputOption::VALUE_REQUIRED, 'Path to composer.json', 'composer.json')
+            ->addOption('ignore', null, InputOption::VALUE_IS_ARRAY | InputOption::VALUE_REQUIRED, 'List of ignored extensions')
         ;
     }
 
@@ -42,7 +43,17 @@ class ExtensionsFinderCommand extends Command
             }
         }
 
+        $ignoredExtensions = $input->getOption('ignore');
         $missingExtensions = array_diff(array_keys($requiredExtensions), $alreadyRequiredExtensions);
+
+        $extraIgnoredExtensions = array_diff($ignoredExtensions, $missingExtensions);
+        if ($extraIgnoredExtensions !== []) {
+            $output->writeln('Extra ignored PHP extensions: ' . implode(', ', $extraIgnoredExtensions));
+            $output->writeln('');
+            return count($extraIgnoredExtensions);
+        }
+
+        $missingExtensions = array_diff($missingExtensions, $ignoredExtensions);
         if (!$missingExtensions) {
             $output->writeln('No missing PHP extensions');
             $output->writeln('');
