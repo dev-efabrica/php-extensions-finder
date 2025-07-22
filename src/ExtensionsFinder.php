@@ -11,7 +11,7 @@ class ExtensionsFinder
 {
     public function find(array $dirs): array
     {
-        $parser = (new ParserFactory())->create(ParserFactory::PREFER_PHP7);
+        $parser = (new ParserFactory())->createForVersion('7.4');
         $traverser = new NodeTraverser();
         $traverser->addVisitor(new NameResolver());
         $requiredExtensions = [];
