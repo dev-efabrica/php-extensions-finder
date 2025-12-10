@@ -14,5 +14,5 @@ if (!$autoloader()) {
 }
 
 $application = new Application();
-$application->add(new ExtensionsFinderCommand());
+$application->addCommand(new ExtensionsFinderCommand());
 $application->run();
