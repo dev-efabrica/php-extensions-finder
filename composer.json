@@ -4,11 +4,11 @@
     "type": "library",
     "keywords": ["PHP", "extensions finder", "ci", "test"],
     "require": {
-        "php": ">= 7.1.0",
+        "php": "^8.4",
         "ext-json": "*",
         "nikic/php-parser": "^5.0",
-        "symfony/console": "^4.2 | ^5.0 | ^6.0 | ^7.0",
-        "symfony/finder": "^4.2 | ^5.0 | ^6.0 | ^7.0"
+        "symfony/console": "^8.0",
+        "symfony/finder": "^7.0"
     },
     "autoload": {
         "classmap": ["src/"]
